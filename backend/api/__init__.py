@@ -4,13 +4,12 @@ from pymongo import MongoClient
 from flask_cors import CORS
 
 # Setup MongoDB
-cluster = MongoClient("mongodb+srv://manojnarender:ManojDaBeast7@cluster0.jhnmbg1.mongodb.net/")
+cluster = MongoClient("mongodb+srv://manojnarender:<password>@cluster0.jhnmbg1.mongodb.net/")
 db = cluster['ToDoApp']
 collection = db["toDoList"]
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'randomString'
-    #app.config['MONGO_URI'] = "mongodb+srv://manojnarender:ManojDaBeast7@cluster0.jhnmbg1.mongodb.net"
     CORS(app)
     
     from routes import main
